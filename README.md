@@ -1,13 +1,57 @@
-# Olamide Olanrewaju's Portfolio
-Olamide Hezekiah "Maxwell" Olanrewaju
-Data Analyst | Trainer
+# World Population Test
+The World Database
+SQL | Analysis
 
-Olamide "Maxwell" is a dynamic and results-driven Business Intelligence Associate with a strong foundation in data analytics and operations management. A graduate of Statistics from the Federal University of Agriculture, Abeokuta, Maxwell combines analytical thinking with practical business insights to deliver transformative solutions across industries, including Manufacturing, Advertising, Insurance, and Information Technology.
+-- 20 Most Populated Citied
+SELECT Name, CountryCode, District, Population from city 
+ORDER BY Population DESC 
+LIMIT 20;
 
-He is a Certified Project Manager (IPMP), a Cisco-certified Data Scientist, and holds a Digital Ads Certification from Aleph UK. These credentials underpin his ability to drive data-informed strategies, manage complex projects, and support digital transformation in modern businesses.
+Select* from countrylanguage;
+Select* from city;
 
-Olamide is the founder and lead trainer at Softview Analytic, where he empowers professionals and organizations through hands-on Microsoft Excel and Data Analysis training. His passion for simplifying complex data concepts has made him a sought-after facilitator at seminars and corporate training events—including his recent engagement at the Smart Farm Academy, where he introduced agricultural professionals to Excel for business optimization.
+-- No of Official Languages in the world
+Select Count(distinct Language) 
+from countrylanguage where Isofficial = 'T';
 
-With an eye for innovation and a heart for teaching, Maxwell also creates valuable content on platforms like YouTube, where he shares tutorials on inventory management systems, Excel automation, Power BI, Tableau, and solutions to real-world SQL interview questions.
+Select * from countrylanguage;
 
-In every role, Maxwell is committed to excellence, growth, and helping others succeed through the strategic use of data and technology.
+-- Using the DB. What are the languages in the world? How many nations speak the available languages
+Select distinct language 
+from countrylanguage;
+
+Select count(distinct countrycode) 
+from countrylanguage;
+
+SELECT Countrycode, language from countrylanguage;
+
+Select distinct countrycode
+from countrylanguage;
+
+-- Using the DB, how many languages are there by country? [In a nation, how many languages are being spoken?]
+Select * from countrylanguage;
+Select Countrycode, 
+count(language) 
+AS NoOfSpokenLanguage 
+from countrylanguage 
+GROUP BY CountryCode
+ORDER BY NoOfSpokenLanguage ASC;
+
+SELECT Sum(Language) from countrylanguage;
+
+select* from countrylanguage;
+Select count(Language) 
+from countrylanguage;
+
+-- What is the total population by continent?
+SELECT continent, SUM(population) AS PopulationTotal
+FROM Country
+GROUP BY continent
+ORDER BY PopulationTotal DESC;
+
+-- What are the 10 least populated countries?
+Select* from country;
+SELECT Code, Name, Population
+FROM Country
+ORDER BY population ASC
+LIMIT 10;
