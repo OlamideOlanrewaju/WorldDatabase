@@ -1,6 +1,4 @@
-# Olamide's Portfolio
-
-# The World Database (https://olamideolanrewaju.github.io/My-Data-Analysis_Profile/)
+# The World Database
 SQL | Analysis
 
 -- 20 Most Populated Citied
